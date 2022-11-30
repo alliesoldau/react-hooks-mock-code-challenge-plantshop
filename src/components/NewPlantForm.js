@@ -13,7 +13,6 @@ function NewPlantForm({ onNewPlantSubmit }) {
       image: newPlantImage,
       price: newPlantPrice,
     }
-    // console.log(`newPlant: ${newPlant.price}`)
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: {
@@ -23,6 +22,9 @@ function NewPlantForm({ onNewPlantSubmit }) {
     })
     .then((r) => r.json())
     .then(onNewPlantSubmit)
+    setNewPlantName("")
+    setNewPlantImage("")
+    setNewPlantPrice(0)
   }
 
   return (

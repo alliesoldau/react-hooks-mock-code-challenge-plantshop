@@ -13,11 +13,8 @@ function PlantPage() {
     .then((data) => setPlantData(data))
   }, [])
 
-  // console.log(plantData)
-
   function onNewPlantSubmit(newPlant) {
     setPlantData([...plantData, newPlant])
-    console.log(plantData)
   }
 
   return (
