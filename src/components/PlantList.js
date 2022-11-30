@@ -1,7 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plantData, handleUpdatedPrice }) {
+function PlantList({ plantData, handleUpdatedPrice, deletePlant={deletePlant} }) {
 
   // console.log(plantData)
   const plantCards = plantData.map((plant) => {
@@ -10,6 +10,7 @@ function PlantList({ plantData, handleUpdatedPrice }) {
         key={plant.id}
         plant={plant}
         handleUpdatedPrice={handleUpdatedPrice}
+        deletePlant={deletePlant}
       />
     )
   })

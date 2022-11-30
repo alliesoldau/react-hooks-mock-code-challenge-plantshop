@@ -43,16 +43,10 @@
       "price": 55
     },
     {
-      "name": "boat",
+      "name": "Boat Plant",
       "image": "https://photos.smugmug.com/photos/i-6tdg72J/0/X4/i-6tdg72J-X4.jpg",
-      "price": "2",
+      "price": "17000",
       "id": 8
-    },
-    {
-      "name": "boat",
-      "image": "https://photos.smugmug.com/photos/i-6tdg72J/0/X4/i-6tdg72J-X4.jpg",
-      "price": "4",
-      "id": 9
     }
   ]
 }

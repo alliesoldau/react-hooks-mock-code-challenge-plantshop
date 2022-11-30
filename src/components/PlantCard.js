@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PlantCard({ plant, handleUpdatedPrice }) {
+function PlantCard({ plant, handleUpdatedPrice, deletePlant }) {
 
   const [stockStatus, setStockStatus] = useState(true)
   const [newPrice, setNewPrice] = useState(0)
@@ -25,6 +25,14 @@ function PlantCard({ plant, handleUpdatedPrice }) {
     .then((data) => handleUpdatedPrice(data))
   }
 
+  function handleDeleteClick() {
+    fetch(`http://localhost:6001/plants/${plant.id}`, {
+      method: "DELETE",
+    })
+    .then((r) => r.json())
+    .then((deletePlant(plant)))
+  }
+
   return (
     <li className="card">
       <img src={plant.image} alt={plant.name} />
@@ -36,6 +44,9 @@ function PlantCard({ plant, handleUpdatedPrice }) {
         ) : (
           <button>Out of Stock</button>
         )}
+      </div>
+      <div>
+        <button onClick={handleDeleteClick}>Delete Me</button>
       </div>
       <form onSubmit={handleNewPrice}>
         <h4> Update Price: </h4>

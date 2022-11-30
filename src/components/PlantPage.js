@@ -35,6 +35,12 @@ function PlantPage() {
     setPlantData(updatedPlantPrice)
   }
 
+  function deletePlant(plantRIP) {
+    const plantsSansRIPPlant = plantData
+    .filter((plant) => plant.id !== plantRIP.id)
+    setPlantData(plantsSansRIPPlant);
+  }
+
   const filteredPlants = plantData
     .filter((plant) => plant.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
@@ -49,6 +55,7 @@ function PlantPage() {
       <PlantList 
         plantData={filteredPlants}
         handleUpdatedPrice={handleUpdatedPrice}
+        deletePlant={deletePlant}
       />
     </main>
   );
