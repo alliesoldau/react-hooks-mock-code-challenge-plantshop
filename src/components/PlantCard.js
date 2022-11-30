@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PlantCard({ plant }) {
+function PlantCard({ plant, handleUpdatedPrice }) {
 
   const [stockStatus, setStockStatus] = useState(true)
   const [newPrice, setNewPrice] = useState(0)
@@ -9,7 +9,8 @@ function PlantCard({ plant }) {
     setStockStatus(!stockStatus);
   }
 
-  function handleNewPrice() {
+  function handleNewPrice(e) {
+    e.preventDefault();
     const parsedPrice = parseInt(newPrice, 10)
     fetch(`http://localhost:6001/plants/${plant.id}`, {
       method: "PATCH",
@@ -21,7 +22,7 @@ function PlantCard({ plant }) {
       }),
     })
     .then((r) => r.json())
-    .then((data) => console.log(data))
+    .then((data) => handleUpdatedPrice(data))
   }
 
   return (

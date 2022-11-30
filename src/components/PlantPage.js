@@ -23,6 +23,18 @@ function PlantPage() {
     setSearchTerm(e.target.value)
   }
 
+  function handleUpdatedPrice(newPrice) {
+    console.log(newPrice.price)
+    const updatedPlantPrice = plantData.map((plant) => {
+      if (plant.price === newPrice.price) {
+        return plant
+      } else {
+        return newPrice
+      }
+    })
+    setPlantData(updatedPlantPrice)
+  }
+
   const filteredPlants = plantData
     .filter((plant) => plant.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
@@ -36,6 +48,7 @@ function PlantPage() {
       />
       <PlantList 
         plantData={filteredPlants}
+        handleUpdatedPrice={handleUpdatedPrice}
       />
     </main>
   );
