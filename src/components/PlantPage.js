@@ -15,9 +15,16 @@ function PlantPage() {
 
   // console.log(plantData)
 
+  function onNewPlantSubmit(newPlant) {
+    setPlantData([...plantData, newPlant])
+    console.log(plantData)
+  }
+
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm 
+        onNewPlantSubmit={onNewPlantSubmit}
+      />
       <Search />
       <PlantList 
         plantData={plantData}

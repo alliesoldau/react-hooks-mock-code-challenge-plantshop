@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "boat",
+      "image": "https://photos.smugmug.com/photos/i-6tdg72J/0/X4/i-6tdg72J-X4.jpg",
+      "price": "2",
+      "id": 8
     }
   ]
 }
